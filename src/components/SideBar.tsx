@@ -9,12 +9,15 @@ interface GenreResponseProps {
 
 interface SideBarProps {
   genres: GenreResponseProps[]
+  selectedId: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export function SideBar(props: SideBarProps) {
+
   const [selectedGenreId, setSelectedGenreId] = useState(1);
-  
+
   function handleClickButton(id: number) {
+    props.selectedId(id);
     setSelectedGenreId(id);
   }
 

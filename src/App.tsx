@@ -53,11 +53,13 @@ export function App() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <SideBar genres={genres} />
+      <SideBar
+      genres={genres}
+      selectedId={setSelectedGenreId}/>
 
       <Content 
         movies={movies}
-        genre={selectedGenre.name}
+        genre={selectedGenre.title}
       />
     </div>
   )
